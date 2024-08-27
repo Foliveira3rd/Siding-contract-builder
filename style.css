@@ -1,0 +1,88 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 15px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold; /* Corrected */
+}
+
+h3, h4 {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold; /* Corrected */
+}
+
+p {
+  font-size: 10px;
+}
+
+form {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 10px; /* Smaller text size */
+}
+
+label {
+  display: flex;
+  align-items: center; /* Corrected */
+  margin: 8px 0;
+}
+
+label input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and text */
+}
+
+textarea,
+select,
+input[type="text"] {
+  display: block;
+  width: 100%; 
+  padding: 8px;
+  margin: 8px 0; /* Adjust margins for consistent spacing */
+  font-size: 10px; /* Smaller font size */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin-top: 5px;
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#summary {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#summary h3 {
+  margin-top: 0;
+}
+
+#summary textarea {
+  resize: none; /* Prevent resizing for better layout control */
+  width: 100%;
+}

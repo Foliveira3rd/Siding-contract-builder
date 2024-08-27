@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Contract Builder</h1>
+    <p>A form to capture and customize the scope of work for construction projects, allowing detailed specifications for both the entire house and individual sections.</p>
+
+    <form id="scopeForm">
+        <h3>Entire House Specifications</h3>
+        <div id="houseSpecs">
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Strip full house of both layers and inspect substrate" onclick="toggleEditableField('strippingFullHouse', this)">
+                    Strip full house of both layers and inspect substrate
+                </label>
+                <textarea id="strippingFullHouse" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Strip outer layer and installing fanfold" onclick="toggleEditableField('strippingOuterLayer', this)">
+                    Strip outer layer and installing fanfold
+                </label>
+                <textarea id="strippingOuterLayer" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Strip down to substrate and inspect for damage" onclick="toggleEditableField('stripDownToSubstrate', this)">
+                    Strip down to substrate and inspect for damage
+                </label>
+                <textarea id="stripDownToSubstrate" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Install fan fold ⅜ insulation barrier to exterior of home" onclick="toggleEditableField('installFanFold', this)">
+                    Install fan fold ⅜ insulation barrier to exterior of home
+                </label>
+                <textarea id="installFanFold" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Install ¼” insulation board to exterior of home" onclick="toggleEditableField('installInsulationBoard', this)">
+                    Install ¼” insulation board to exterior of home
+                </label>
+                <textarea id="installInsulationBoard" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Install weather barrier to exterior of home" onclick="toggleEditableField('installWeatherBarrier', this)">
+                    Install weather barrier to exterior of home
+                </label>
+                <textarea id="installWeatherBarrier" class="hidden" placeholder="Details about installing weather barrier..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Install Certainteed Mainstreet double 4 vinyl siding" onclick="toggleEditableField('installMainstreetSiding', this)">
+                    Install Certainteed Mainstreet double 4 vinyl siding
+                </label>
+                <select id="installMainstreetSiding" class="hidden">
+                    <option value="">Select Color</option>
+                    <option value="Autumn Red">Autumn Red*</option>
+                    <option value="Sable Brown">Sable Brown*</option>
+                    <option value="Hearthstone">Hearthstone*</option>
+                    <option value="Spruce">Spruce*</option>
+                    <option value="Forest">Forest*</option>
+                    <option value="Pacific Blue">Pacific Blue*</option>
+                    <option value="Wedgewood Blue">Wedgewood Blue</option>
+                    <option value="Flagstone">Flagstone*</option>
+                    <option value="Charcoal Gray">Charcoal Gray*</option>
+                    <option value="Castle Stone">Castle Stone</option>
+                    <option value="Granite Gray">Granite Gray</option>
+                    <option value="Sterling Gray">Sterling Gray</option>
+                    <option value="Oxford Blue">Oxford Blue</option>
+                    <option value="Seagrass">Seagrass</option>
+                    <option value="Cypress">Cypress</option>
+                    <option value="Herringbone">Herringbone</option>
+                    <option value="Sandstone Beige">Sandstone Beige</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Install Certainteed Monogram double 4 vinyl siding" onclick="toggleEditableField('installMonogramSiding', this)">
+                    Install Certainteed Monogram double 4 vinyl siding
+                </label>
+                <select id="installMonogramSiding" class="hidden">
+                    <option value="">Select Color</option>
+                    <option value="Sable Brown">Sable Brown</option>
+                    <option value="Pacific Blue">Pacific Blue</option>
+                    <option value="Ivy Green">Ivy Green</option>
+                    <option value="Barn Red">Barn Red</option>
+                    <option value="Terra Cotta">Terra Cotta</option>
+                    <option value="Mountain Cedar">Mountain Cedar</option>
+                    <option value="Hearthstone">Hearthstone</option>
+                    <option value="Spruce">Spruce</option>
+                    <option value="Flagstone">Flagstone</option>
+                    <option value="Granite Gray">Granite Gray</option>
+                    <option value="Cypress">Cypress</option>
+                    <option value="Buckskin">Buckskin</option>
+                    <option value="Natural Clay">Natural Clay</option>
+                    <option value="Suede">Suede</option>
+                    <option value="Savannah Wicker">Savannah Wicker</option>
+                    <option value="Sterling Gray">Sterling Gray</option>
+                    <option value="Sandpiper">Sandpiper</option>
+                    <option value="Light Maple">Light Maple</option>
+                    <option value="Desert Tan">Desert Tan</option>
+                    <option value="Herringbone">Herringbone</option>
+                    <option value="Heritage Cream">Heritage Cream</option>
+                    <option value="Snow">Snow</option>
+                    <option value="Colonial White">Colonial White</option>
+                    <option value="Sandstone Beige">Sandstone Beige</option>
+                    <option value="Autumn Yellow">Autumn Yellow</option>
+                    <option value="Coral">Coral</option>
+                    <option value="Mint">Mint</option>
+                    <option value="Sea Breeze">Sea Breeze</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Install Exterior Portfolio double 4 vinyl siding" onclick="toggleEditableField('installPortfolioSiding', this)">
+                    Install Exterior Portfolio double 4 vinyl siding
+                </label>
+                <select id="installPortfolioSiding" class="hidden">
+                    <option value="">Select Color</option>
+                    <option value="Espresso">Espresso</option>
+                    <option value="Regatta">Regatta</option>
+                    <option value="Lighthouse Red">Lighthouse Red</option>
+                    <option value="Graphite">Graphite</option>
+                    <option value="Spruce">Spruce</option>
+                    <option value="Slate">Slate</option>
+                    <option value="Carbon">Carbon</option>
+                    <option value="Stone Harbor">Stone Harbor</option>
+                    <option value="Indigo">Indigo</option>
+                    <option value="Peppercorn">Peppercorn</option>
+                    <option value="Polaris">Polaris</option>
+                    <option value="Canyon">Canyon</option>
+                    <option value="Oceanside">Oceanside</option>
+                    <option value="Nantucket">Nantucket</option>
+                    <option value="Smoky Ash">Smoky Ash</option>
+                    <option value="Metropolitan Gray">Metropolitan Gray</option>
+                    <option value="Country Beige">Country Beige</option>
+                    <option value="Wheat">Wheat</option>
+                    <option value="Aspen White">Aspen White</option>
+                    <option value="Driftwood">Driftwood</option>
+                    <option value="Cypress">Cypress</option>
+                    <option value="Pearl">Pearl</option>
+                    <option value="Mocha">Mocha</option>
+                    <option value="Saddle">Saddle</option>
+                    <option value="Clay">Clay</option>
+                    <option value="Bone">Bone</option>
+                    <option value="Greystone">Greystone</option>
+                    <option value="Rye">Rye</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><input type="checkbox" name="houseSpec" value="Install Cedar Impressions Individual 5 Sawmill" onclick="toggleEditableField('installIndividual5Sawmill', this)"> Install Cedar Impressions Individual 5 Sawmill</label>
+                    <select id="installIndividual5Sawmill">
+                    <option value="">Select Color</option>
+                    <option value="Autumn Red">Autumn Red</option>
+                    <option value="Brownstone">Brownstone</option>
+                    <option value="Buckskin">Buckskin</option>
+                    <option value="Castle Stone">Castle Stone</option>
+                    <option value="Driftwood Blend - Light">Driftwood Blend - Light</option>
+                    <option value="Driftwood Blend - Medium">Driftwood Blend - Medium</option>
+                    <option value="Driftwood Blend - Dark">Driftwood Blend - Dark</option>
+                    <option value="Flagstone">Flagstone</option>
+                    <option value="Granite Gray">Granite Gray</option>
+                    <option value="Hearthstone">Hearthstone</option>
+                    <option value="Natural Blend - Light">Natural Blend - Light</option>
+                    <option value="Natural Blend - Medium">Natural Blend - Medium</option>
+                    <option value="Natural Blend - Dark">Natural Blend - Dark</option>
+                    <option value="Pacific Blue">Pacific Blue</option>
+                    <option value="Spruce">Spruce</option>
+                    <option value="Sterling Gray">Sterling Gray</option>
+                    <option value="Weathered Wood">Weathered Wood</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><input type="checkbox" name="houseSpec" value="Install Cedar Impressions T5 Straight Edge Sawmill" onclick="toggleEditableField('installT5Sawmill', this)"> Install Cedar Impressions T5 Straight Edge Sawmill</label>
+                <select id="installT5Sawmill">
+                    <option value="">Select Color</option>
+                    <option value="Autumn Red">Autumn Red</option>
+                    <option value="Brownstone">Brownstone</option>
+                    <option value="Buckskin">Buckskin</option>
+                    <option value="Castle Stone">Castle Stone</option>
+                    <option value="Driftwood Blend - Light">Driftwood Blend - Light</option>
+                    <option value="Driftwood Blend - Medium">Driftwood Blend - Medium</option>
+                    <option value="Driftwood Blend - Dark">Driftwood Blend - Dark</option>
+                    <option value="Flagstone">Flagstone</option>
+                    <option value="Granite Gray">Granite Gray</option>
+                    <option value="Hearthstone">Hearthstone</option>
+                    <option value="Natural Blend - Light">Natural Blend - Light</option>
+                    <option value="Natural Blend - Medium">Natural Blend - Medium</option>
+                    <option value="Natural Blend - Dark">Natural Blend - Dark</option>
+                    <option value="Pacific Blue">Pacific Blue</option>
+                    <option value="Spruce">Spruce</option>
+                    <option value="Sterling Gray">Sterling Gray</option>
+                    <option value="Weathered Wood">Weathered Wood</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label><input type="checkbox" name="houseSpec" value="Install Cedar Impressions D7 Straight Edge Perfection" onclick="toggleEditableField('installD7Perfection', this)"> Install Cedar Impressions D7 Straight Edge Perfection</label>
+                <select id="installD7Perfection">
+                    <option value="">Select Color</option>
+                    <option value="Autumn Red">Autumn Red</option>
+                    <option value="Brownstone">Brownstone</option>
+                    <option value="Buckskin">Buckskin</option>
+                    <option value="Castle Stone">Castle Stone</option>
+                    <option value="Driftwood Blend - Light">Driftwood Blend - Light</option>
+                    <option value="Driftwood Blend - Medium">Driftwood Blend - Medium</option>
+                    <option value="Driftwood Blend - Dark">Driftwood Blend - Dark</option>
+                    <option value="Flagstone">Flagstone</option>
+                    <option value="Granite Gray">Granite Gray</option>
+                    <option value="Hearthstone">Hearthstone</option>
+                    <option value="Natural Blend - Light">Natural Blend - Light</option>
+                    <option value="Natural Blend - Medium">Natural Blend - Medium</option>
+                    <option value="Natural Blend - Dark">Natural Blend - Dark</option>
+                    <option value="Pacific Blue">Pacific Blue</option>
+                    <option value="Spruce">Spruce</option>
+                    <option value="Sterling Gray">Sterling Gray</option>
+                    <option value="Weathered Wood">Weathered Wood</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label><input type="checkbox" name="houseSpec" value="Install Cedar Impressions D7 Staggered Perfection" onclick="toggleEditableField('installD7StaggeredPerfection', this)"> Install Cedar Impressions D7 Staggered Perfection</label>
+                <select id="installD7StaggeredPerfection">
+                    <option value="">Select Color</option>
+                    <option value="Autumn Red">Autumn Red</option>
+                    <option value="Brownstone">Brownstone</option>
+                    <option value="Buckskin">Buckskin</option>
+                    <option value="Castle Stone">Castle Stone</option>
+                    <option value="Driftwood Blend - Light">Driftwood Blend - Light</option>
+                    <option value="Driftwood Blend - Medium">Driftwood Blend - Medium</option>
+                    <option value="Driftwood Blend - Dark">Driftwood Blend - Dark</option>
+                    <option value="Flagstone">Flagstone</option>
+                    <option value="Granite Gray">Granite Gray</option>
+                    <option value="Hearthstone">Hearthstone</option>
+                    <option value="Natural Blend - Light">Natural Blend - Light</option>
+                    <option value="Natural Blend - Medium">Natural Blend - Medium</option>
+                    <option value="Natural Blend - Dark">Natural Blend - Dark</option>
+                    <option value="Pacific Blue">Pacific Blue</option>
+                    <option value="Spruce">Spruce</option>
+                    <option value="Sterling Gray">Sterling Gray</option>
+                    <option value="Weathered Wood">Weathered Wood</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Replace existing window trim with PVC window trim" onclick="toggleEditableField('replaceWindowTrim', this)">
+                    Replace existing window trim with PVC window trim
+                </label>
+                <textarea id="replaceWindowTrim" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Wrap window trim with aluminum coil (White)" onclick="toggleEditableField('wrapWindowTrim', this)">
+                    Wrap window trim with aluminum coil (White)
+                </label>
+                <textarea id="wrapWindowTrim" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Existing window trim to remain as is. Install a j-channel around windows" onclick="toggleEditableField('existingWindowTrim', this)">
+                    Existing window trim to remain as is. Install a j-channel around windows
+                </label>
+                <textarea id="existingWindowTrim" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+            <!-- New item for replacing door trim -->
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="doorTrimPVC" value="Replace existing door trim with PVC" onclick="toggleEditableField('doorTrimLocation', this)">
+                    Replace existing door trim with PVC
+                </label>
+                <input type="text" id="doorTrimLocation" class="hidden" placeholder="Location">
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Wrap fascia with aluminum coil (white)" onclick="toggleEditableField('wrapFascia', this)">
+                    Wrap fascia with aluminum coil (white)
+                </label>
+                <textarea id="wrapFascia" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Replace existing fascia with PVC fascias" onclick="toggleEditableField('replaceFascia', this)">
+                    Replace existing fascia with PVC fascias
+                </label>
+                <textarea id="replaceFascia" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Wrap rakes with aluminum coil (white)" onclick="toggleEditableField('wrapRakes', this)">
+                    Wrap rakes with aluminum coil (white)
+                </label>
+                <textarea id="wrapRakes" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Replace rakes with PVC rake trim" onclick="toggleEditableField('replaceRakes', this)">
+                    Replace rakes with PVC rake trim
+                </label>
+                <textarea id="replaceRakes" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Remove existing soffits and install vinyl vented soffits" onclick="toggleEditableField('replaceSoffits', this)">
+                    Remove existing soffits and install vinyl vented soffits
+                </label>
+                <textarea id="replaceSoffits" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Remove existing soffits and install vinyl hidden vented soffits" onclick="toggleEditableField('installHiddenSoffits', this)">
+                    Remove existing soffits and install vinyl hidden vented soffits
+                </label>
+                <textarea id="installHiddenSoffits" class="hidden" placeholder="Additional details..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Remove and dispose of existing gutters">
+                    Remove and dispose of existing gutters
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Remove and place gutters to the side for customer">
+                    Remove and place gutters to the side for customer
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Replace existing gable end vent with new vent">
+                    Replace existing gable end vent with new vent
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" name="houseSpec" value="Remove existing gable vent and close up with plywood">
+                    Remove existing gable vent and close up with plywood
+                </label>
+            </div>
+        </div>
+
+        <h3>Sections of the House</h3>
+        <div id="sectionSpecs">
+            <div id="frontSection">
+                <h4>Front</h4>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="frontSpec" value="Windows" onclick="toggleEditableField('frontWindows', this)">
+                        Windows
+                    </label>
+                    <input type="text" id="frontWindows" class="hidden" placeholder="Additional details...">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="frontSpec" value="Trim" onclick="toggleEditableField('frontTrim', this)">
+                        Trim
+                    </label>
+                    <input type="text" id="frontTrim" class="hidden" placeholder="Additional details...">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="frontSpec" value="Light Blocks" onclick="toggleEditableField('frontLightBlocks', this)">
+                        Light Blocks
+                    </label>
+                    <input type="text" id="frontLightBlocks" class="hidden" placeholder="Additional details...">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="frontSpec" value="Electrical Notes" onclick="toggleEditableField('frontElectricalNotes', this)">
+                        Electrical Notes
+                    </label>
+                    <input type="text" id="frontElectricalNotes" class="hidden" placeholder="Additional details...">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="frontSpec" value="Inclusions" onclick="toggleEditableField('frontInclusions', this)">
+                        Inclusions
+                    </label>
+                    <textarea id="frontInclusions" class="hidden" placeholder="Include specific details here..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="frontSpec" value="Exclusions" onclick="toggleEditableField('frontExclusions', this)">
+                        Exclusions
+                    </label>
+                    <textarea id="frontExclusions" class="hidden" placeholder="Exclude specific details here..."></textarea>
+                </div>
+                            </div>
+
+                            <div id="leftSection">
+                                <h4>Left</h4>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="leftSpec" value="Windows" onclick="toggleEditableField('leftWindows', this)">
+                                        Windows
+                                    </label>
+                                    <input type="text" id="leftWindows" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="leftSpec" value="Trim" onclick="toggleEditableField('leftTrim', this)">
+                                        Trim
+                                    </label>
+                                    <input type="text" id="leftTrim" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="leftSpec" value="Light Blocks" onclick="toggleEditableField('leftLightBlocks', this)">
+                                        Light Blocks
+                                    </label>
+                                    <input type="text" id="leftLightBlocks" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="leftSpec" value="Electrical Notes" onclick="toggleEditableField('leftElectricalNotes', this)">
+                                        Electrical Notes
+                                    </label>
+                                    <input type="text" id="leftElectricalNotes" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="leftSpec" value="Inclusions" onclick="toggleEditableField('leftInclusions', this)">
+                                        Inclusions
+                                    </label>
+                                    <textarea id="leftInclusions" class="hidden" placeholder="Include specific details here..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="leftSpec" value="Exclusions" onclick="toggleEditableField('leftExclusions', this)">
+                                        Exclusions
+                                    </label>
+                                    <textarea id="leftExclusions" class="hidden" placeholder="Exclude specific details here..."></textarea>
+                                </div>
+                            </div>
+
+                            <div id="backSection">
+                                <h4>Back</h4>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="backSpec" value="Windows" onclick="toggleEditableField('backWindows', this)">
+                                        Windows
+                                    </label>
+                                    <input type="text" id="backWindows" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="backSpec" value="Trim" onclick="toggleEditableField('backTrim', this)">
+                                        Trim
+                                    </label>
+                                    <input type="text" id="backTrim" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="backSpec" value="Light Blocks" onclick="toggleEditableField('backLightBlocks', this)">
+                                        Light Blocks
+                                    </label>
+                                    <input type="text" id="backLightBlocks" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="backSpec" value="Electrical Notes" onclick="toggleEditableField('backElectricalNotes', this)">
+                                        Electrical Notes
+                                    </label>
+                                    <input type="text" id="backElectricalNotes" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="backSpec" value="Inclusions" onclick="toggleEditableField('backInclusions', this)">
+                                        Inclusions
+                                    </label>
+                                    <textarea id="backInclusions" class="hidden" placeholder="Include specific details here..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="backSpec" value="Exclusions" onclick="toggleEditableField('backExclusions', this)">
+                                        Exclusions
+                                    </label>
+                                    <textarea id="backExclusions" class="hidden" placeholder="Exclude specific details here..."></textarea>
+                                </div>
+                            </div>
+
+                            <div id="rightSection">
+                                <h4>Right</h4>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="rightSpec" value="Windows" onclick="toggleEditableField('rightWindows', this)">
+                                        Windows
+                                    </label>
+                                    <input type="text" id="rightWindows" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="rightSpec" value="Trim" onclick="toggleEditableField('rightTrim', this)">
+                                        Trim
+                                    </label>
+                                    <input type="text" id="rightTrim" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="rightSpec" value="Light Blocks" onclick="toggleEditableField('rightLightBlocks', this)">
+                                        Light Blocks
+                                    </label>
+                                    <input type="text" id="rightLightBlocks" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="rightSpec" value="Electrical Notes" onclick="toggleEditableField('rightElectricalNotes', this)">
+                                        Electrical Notes
+                                    </label>
+                                    <input type="text" id="rightElectricalNotes" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="rightSpec" value="Inclusions" onclick="toggleEditableField('rightInclusions', this)">
+                                        Inclusions
+                                    </label>
+                                    <textarea id="rightInclusions" class="hidden" placeholder="Include specific details here..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="rightSpec" value="Exclusions" onclick="toggleEditableField('rightExclusions', this)">
+                                        Exclusions
+                                    </label>
+                                    <textarea id="rightExclusions" class="hidden" placeholder="Exclude specific details here..."></textarea>
+                                </div>
+                            </div>
+
+                            <div id="garageSection">
+                                <h4>Garage</h4>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="garageSpec" value="Windows" onclick="toggleEditableField('garageWindows', this)">
+                                        Windows
+                                    </label>
+                                    <input type="text" id="garageWindows" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="garageSpec" value="Trim" onclick="toggleEditableField('garageTrim', this)">
+                                        Trim
+                                    </label>
+                                    <input type="text" id="garageTrim" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="garageSpec" value="Light Blocks" onclick="toggleEditableField('garageLightBlocks', this)">
+                                        Light Blocks
+                                    </label>
+                                    <input type="text" id="garageLightBlocks" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="garageSpec" value="Electrical Notes" onclick="toggleEditableField('garageElectricalNotes', this)">
+                                        Electrical Notes
+                                    </label>
+                                    <input type="text" id="garageElectricalNotes" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="garageSpec" value="Inclusions" onclick="toggleEditableField('garageInclusions', this)">
+                                        Inclusions
+                                    </label>
+                                    <textarea id="garageInclusions" class="hidden" placeholder="Include specific details here..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="garageSpec" value="Exclusions" onclick="toggleEditableField('garageExclusions', this)">
+                                        Exclusions
+                                    </label>
+                                    <textarea id="garageExclusions" class="hidden" placeholder="Exclude specific details here..."></textarea>
+                                </div>
+                            </div>
+
+                            <div id="sunRoomSection">
+                                <h4>Sun Room</h4>
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="sunRoomSpec" value="Windows" onclick="toggleEditableField('sunRoomWindows', this)">
+                                        Windows
+                                    </label>
+                                    <input type="text" id="sunRoomWindows" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="sunRoomSpec" value="Trim" onclick="toggleEditableField('sunRoomTrim', this)">
+                                        Trim
+                                    </label>
+                                    <input type="text" id="sunRoomTrim" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="sunRoomSpec" value="Light Blocks" onclick="toggleEditableField('sunRoomLightBlocks', this)">
+                                        Light Blocks
+                                    </label>
+                                    <input type="text" id="sunRoomLightBlocks" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="sunRoomSpec" value="Electrical Notes" onclick="toggleEditableField('sunRoomElectricalNotes', this)">
+                                        Electrical Notes
+                                    </label>
+                                    <input type="text" id="sunRoomElectricalNotes" class="hidden" placeholder="Additional details...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="sunRoomSpec" value="Inclusions" onclick="toggleEditableField('sunRoomInclusions', this)">
+                                        Inclusions
+                                    </label>
+                                    <textarea id="sunRoomInclusions" class="hidden" placeholder="Include specific details here..."></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" name="sunRoomSpec" value="Exclusions" onclick="toggleEditableField('sunRoomExclusions', this)">
+                                        Exclusions
+                                    </label>
+                                    <textarea id="sunRoomExclusions" class="hidden" placeholder="Exclude specific details here..."></textarea>
+                                </div>
+                            </div>
+
+            <div id="dormersSection">
+                <h4>Dormers</h4>
+
+                <div class="form-group">
+                    <label>
+                        Number of Dormers:
+                        <input type="number" id="numDormers" min="1" onchange="generateDormerFields()">
+                    </label>
+                </div>
+
+                <div id="dormersGroup">
+                    <!-- Dynamic dormer fields will be added here -->
+                </div>
+            </div>
+
+            <h3>Special Notes</h3>
+            <textarea id="specialNotes" rows="3" style="width:100%;" placeholder="Add any special notes here..."></textarea>
+
+            <h3>Exclusions</h3>
+            <textarea id="exclusions" rows="3" style="width:100%;" placeholder="List any exclusions here..."></textarea>
+            <button type="button" onclick="generateSummary()">Generate Summary</button>
+            <button type="button" onclick="copySummary()">Copy Summary</button>
+
+            </form>
+
+            <div id="summary">
+                <h3>Summary of Selected Items:</h3>
+                <textarea id="summaryText" rows="10" style="width:100%;"></textarea>
+            </div>
+
+            <script src="script.js"></script>
+            </body>
+            </html>
